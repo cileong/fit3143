@@ -59,6 +59,7 @@ Classifies architectures based on the number of concurrent *instruction* and *da
 ## Granularity
 
 If $T_\text{comp}$ denotes the computation time, $T_\text{comm}$ denotes the communication time, then the granularity (or grain size), $G$ of a task is given by:
+
 $$
     G = \frac{T_\text{comp}}{T_\text{comm}}
 $$
