@@ -1,14 +1,44 @@
 # Week 1: Introduction to parallel computing & distributed systems
 
-Types of parallelism
+## Bottlenecks of serial computing (research)
 
-* Bit-level parallelism
-* Instruction-level parallelism (ILP)
-* Data-level parallelism (DLP)
-* Task parallelism
-* Job-level parallelism
+### Memory wall
 
-## Flynn's Taxonomy
+* Increasing operating frequency will not optimize the performance.
+* Bottleneck: gap between CPU and memory throughput.
+
+### ILP wall
+
+* Difficulty in full parallel instruction processing.
+
+### Power wall
+
+* Power consumption doubled following the doubling of operating frequency.
+* 1% clock increase = 3% power increase.
+
+## Levels of parallelism
+
+### Bit-level parallelism
+
+* Increase processor word size.
+* Reduces number of instructions needed to perform operations on variables of sizes > word length.
+* Example: 8-bit processors need 2 instructions to add two 16-bit integers; 16-bit processors only need 1.
+
+### Instruction-level parallelism (ILP) (research)
+
+* Superscalar processor with multiple executing units and out-of-order (dynamic) execution.
+
+### Data-level parallelism (DLP)
+
+* Data is split into multiple chunks.
+* Each processor operates on a chunk.
+* All processors carry out the same task.
+
+### Task parallelism
+
+* Each processor executes a different thread/process on the data.
+
+## Flynn's taxonomy
 
 Classifies architectures based on the number of concurrent *instruction* and *data* streams available.
 
