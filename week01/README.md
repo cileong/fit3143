@@ -55,3 +55,29 @@ Classifies architectures based on the number of concurrent *instruction* and *da
 * SI: all processing units execute the same instruction at any given clock cycle.
 * MD: each processing unit operates on a different data element.
 * Synchronous (lockstep) & deterministic execution.
+
+## Granularity
+
+If $T_\text{comp}$ denotes the computation time, $T_\text{comm}$ denotes the communication time, then the granularity (or grain size), $G$ of a task is given by:
+$$ G = \frac{T_\text{comp}}{T_\text{comm}} $$
+
+## Types of parallelism
+
+### Fine-grained parallelism
+
+* Program is broken down to a lot of small tasks.
+* Facilitates load balancing.
+* High communication & synchronisation overhead.
+* Best used in architectures with fast communication (e.g. shared memory architecture).
+
+### Coarse-grained parallelism
+
+* Program is split into a few large tasks.
+* Could result in load imbalance.
+* Low communication & synchronisation overhead.
+* Suitable in architectures with slow communication (e.g. message-passing architecture).
+
+### Medium-grained parallelism
+
+* The middle ground.
+* Most general purpose parallel computers fall in this category.
