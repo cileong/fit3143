@@ -70,17 +70,48 @@ $$
 
 * Program is broken down to a lot of small tasks.
 * Facilitates load balancing.
-* High communication & synchronisation overhead.
+* High communication & synchronization overhead.
 * Best used in architectures with fast communication (e.g. shared memory architecture).
 
 ### Coarse-grained parallelism
 
 * Program is split into a few large tasks.
 * Could result in load imbalance.
-* Low communication & synchronisation overhead.
+* Low communication & synchronization overhead.
 * Suitable in architectures with slow communication (e.g. message-passing architecture).
 
 ### Medium-grained parallelism
 
 * The middle ground.
 * Most general purpose parallel computers fall in this category.
+
+## Speedup
+
+The measure of relative performance between a single processor system and a multiprocessor system with $n$ processors, $S(n)$ is given by:
+
+$$
+    S(n) = \frac{\text{Execution time with 1 processor}}{\text{Execution time with $n$ processors}} = \frac{T_1}{T_n}
+$$
+
+### Theoretical speedup
+
+Let $r_\text{serial}$ be the ratio of time that is executed serially, $T_\text{serial}$ and $T_\text{parallel}$ be the time required to solve a given task serially and in parallel with $n$ processors respectively, then the theoretical speedup $S(n)$ is given by:
+
+$$
+\begin{align*}
+    S(n) &= \frac{T_\text{serial}}{T_\text{parallel}} \\
+    &= \frac{T_\text{serial}}{r_\text{serial} \cdot T_\text{serial} + (1 - r_\text{serial}) \cdot \frac{T_\text{serial}}{n}} \\
+    &= \frac{1}{r_\text{serial} + \frac{1 - r\text{serial}}{n}} \\
+    &= \frac{n}{1 + r_\text{serial}(n-1)}
+\end{align*}
+$$
+
+### Maximum speedup
+
+The maximum speedup is observed when the task can be run entirely in parallel, i.e. $r_\text{serial} = 0$:
+
+$$
+    S(n) = \frac{n}{1 + 0(n-1)} = n
+$$
+
+$\therefore$ Maximum speedup is $S(n) = n$, and normally $S(n) \le n$.
