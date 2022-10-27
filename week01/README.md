@@ -114,4 +114,12 @@ $$
     S(n) = \frac{n}{1 + 0(n-1)} = n
 $$
 
-$\therefore$ Maximum speedup is $S(n) = n$, and normally $S(n) \le n$.
+$\therefore$ Maximum achievable speedup is $S(n) = n$, and normally $S(n) \le n$.
+
+#### Superlinear speedup $S(n) > n$
+
+Usually due to:
+
+* Suboptimal sequential algorithm.
+* Architecture favors parallel formation.
+* Extra memory in multiprocessor system, which can hold more of the problem data at any instant, leading to relatively faster disk-memory traffic.
