@@ -106,6 +106,12 @@ $$
 \end{align*}
 $$
 
+Or alternatively, if $r_\text{parallel}$ is the parallelizable portion:
+
+$$
+    S(n) = \frac{1}{r_\text{serial} + \frac{r_\text{parallel}}{n}}
+$$
+
 ### Maximum speedup
 
 The maximum speedup is observed when the task can be run entirely in parallel, i.e. $r_\text{serial} = 0$:
@@ -123,3 +129,11 @@ Usually due to:
 * Suboptimal sequential algorithm.
 * Architecture favors parallel formation.
 * Extra memory in multiprocessor system, which can hold more of the problem data at any instant, leading to relatively faster disk-memory traffic.
+
+### Amdahl's law
+
+The overall performance improvement gained by optimizing a single part of a system is limited by the fraction of time that the improved part is actually used.
+
+$$
+    \lim_{n\to\infty}{S(n)} = \lim_{n\to\infty}{\left( \frac{1}{r_\text{serial} + \frac{r_\text{parallel}}{n}} \right)} = \frac{1}{r_\text{serial}}
+$$
