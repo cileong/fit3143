@@ -101,7 +101,7 @@ $$
 \begin{align*}
     S(n) &= \frac{T_\text{serial}}{T_\text{parallel}} \\
     &= \frac{T_\text{serial}}{r_\text{serial} \cdot T_\text{serial} + (1 - r_\text{serial}) \cdot \frac{T_\text{serial}}{n}} \\
-    &= \frac{1}{r_\text{serial} + \frac{1 - r\text{serial}}{n}} \\
+    &= \frac{1}{r_\text{serial} + (1 - r_\text{serial}) \cdot \frac{1}{n}} \\
     &= \frac{n}{1 + r_\text{serial}(n-1)}
 \end{align*}
 $$
